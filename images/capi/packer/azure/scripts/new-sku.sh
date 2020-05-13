@@ -41,7 +41,7 @@ echo "Getting pub..."
 (set -x ; curl -fsSL https://github.com/devigned/pub/releases/download/v0.2.0/pub_v0.2.0_linux_amd64.tar.gz -o pub; tar -xzf pub)
 
 echo "Creating new SKU"
-(set -x ; ./pub_linux_amd64 skus put -p $PUBLISHER -o "$OFFER" -f sku.json ; echo "")
+(set -x ; DEBUG=true ./pub_linux_amd64 skus put -p $PUBLISHER -o "$OFFER" -f sku.json ; echo "")
 
 echo "Writing publishing info"
 cat <<EOF > sku-publishing-info.json
